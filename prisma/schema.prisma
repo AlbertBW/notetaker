@@ -88,6 +88,7 @@ model Note {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     title     String
-    content   Topic    @relation(fields: [topicId], references: [id])
+    content   String   @db.Text
+    topic     Topic    @relation(fields: [topicId], references: [id])
     topicId   String
 }
